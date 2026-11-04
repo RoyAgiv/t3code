@@ -108,13 +108,13 @@ An empty database is a bad test. Seed your worktree's `.t3` with a copy of real 
 - **Do not run repo-wide checks.** No `vp check`, no `vp run -r test`, no `vp run -r typecheck` unless I ask. CI owns the full suite.
 - Backend behavior changes ship with focused tests for that behavior.
 - The server is event-sourced and its async flows emit typed receipts. Wait on receipts and worker drains, never on sleeps or polling. A test that needs a timeout to pass is wrong.
-- Upon request, user-visible frontend changes should get one integrated pass in a real client: `test-t3-app` for web, `test-t3-mobile` for mobile. The primary agent does this once after integrating. Subagents do not launch their own dev servers. Ask permission before doing computer use or spinning up browsers.
+- User-visible frontend changes should get one integrated pass in a real client when it is needed to verify the assigned work: `test-t3-app` for web, `test-t3-mobile` for mobile. The primary agent does this once after integrating. Reuse a suitable task-owned dev server and browser; ordinary verification within Roy's assigned task needs no additional conversational approval.
 
 For authorized mobile verification, a missing or outdated native client is a build step, not a blocker. Run `node scripts/mobile-native-client.ts ensure <ios|android> <device-id>` on the simulator host before starting Metro. It checks the local Expo fingerprint and builds/installs when needed. See `test-t3-mobile` for the full workflow.
 
 ## Pull requests
 
-- Never make a PR unless the developer explicitly asks you to do so.
+- For Roy's assigned work in this fork, commits, non-force branch pushes, PR creation and updates, CI follow-up, and integration are authorized delivery steps. Complete the required stages without asking again. Follow actual repository protection rules and preserve unrelated changes.
 - Conventional commit titles, plain language: `fix(web): new threads no longer spike CPU`.
 - Body: the problem in a sentence or two, then how you fixed it. End with the model and harness that did the work.
 - UI changes need before/after images. Motion or timing needs a short video.
@@ -161,9 +161,9 @@ Full glossary with file links: `docs/internals/glossary.md`
 - Inferred types over annotations. `any` is the enemy.
 - Comments describe how a thing is used, and move when the code moves. To be used mostly to describe functions, not to annotate every line of behavior.
 - Our users drive agents all day and notice a dropped frame, a lying spinner, and a stale label. No continuously repainting animations; they peg the GPU on high-refresh displays.
-- If a rule here fights the task in front of you, say so loudly and get a human sign-off before breaking it.
+- Apply Roy's current task instructions when they supersede a repository workflow preference. Ask only for essential missing information or an approval actually required by the platform or the requested operation.
 
 ## Additional tips
 
-- Don't verify with browsers or computer use unless the user explicitly agrees or requests it.
+- Browser and computer-use verification that is necessary for Roy's assigned work is authorized. Use a task-owned surface and the account's existing permitted access.
 - Security is important, but should not be over-indexed on, especially for dev mode/maintainer-only features.
