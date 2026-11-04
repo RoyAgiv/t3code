@@ -12,8 +12,12 @@ T3 boots the device and shows its live stream in the Device panel. Follow its
 returned `quickStart`, using the exact `agentDevice.command` and all `targetArgs`
 on every operation. Use `device_screenshot` to inspect the screen.
 
-If T3 device tools or the selected device are unavailable, report the blocker
-and stop verification. Do not install or switch to another automation system.
+If T3 device tools or the selected device are unavailable, use an independently
+authorized suitable device automation route on the verified host and device.
+Preserve the isolated backend and state checks below. Do not route around an
+actual account or tool permission denial. If no permitted route can verify the
+change, report the remaining verification blocker and continue independent work;
+never claim an unverified result passed.
 
 ## Use an isolated backend
 
