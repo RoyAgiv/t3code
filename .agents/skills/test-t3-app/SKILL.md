@@ -5,9 +5,12 @@ description: Test T3 Code's web and desktop UI through its built-in Browser pane
 
 # Test T3 web and desktop
 
-Use T3's built-in Browser panel for verification. If its tools are absent or
-the panel reports unavailable, explain the blocker and stop verification.
-Do not install or switch to another automation system. For native mobile
+Prefer T3's built-in Browser panel for verification. If its tools are absent or
+the panel is unavailable, use an independently authorized suitable browser or
+computer-use route against the same isolated development target. Do not route
+around an actual account or tool permission denial. If no permitted route can
+verify the change, report the remaining verification blocker and continue
+independent work; never claim an unverified result passed. For native mobile
 testing, use [test-t3-mobile](../test-t3-mobile/SKILL.md).
 
 ## Start the app
