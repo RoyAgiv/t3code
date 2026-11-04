@@ -17,8 +17,9 @@ Pre-installed and wired into login shells (`~/.bashrc`/`~/.profile`): Node 24 (v
 - Node gotcha: the base image also ships an older Node on `/exec-daemon` that wins on `PATH` in
   non-login shells. Run commands in a login shell (`bash -lc '...'`) or prepend
   `$HOME/.nvm/versions/node/v24.13.1/bin` so Node 24 (`engines.node: ^24.13.1`) is used.
-- `vp check` also runs the formatter (not just lint); markdown edits must be formatter-clean. Run
-  `vp check --fix` before committing.
+- `vp check` also runs the formatter. Run checks appropriate to the changed files; use
+  `vp check --fix` when broad formatting is needed, and preserve unrelated work. It is not a
+  prerequisite for every commit.
 
 ## Running the web app
 
