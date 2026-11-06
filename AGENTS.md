@@ -116,11 +116,11 @@ For authorized mobile verification, a missing or outdated native client is a bui
 
 - For Roy's assigned work in this fork, commits, non-force branch pushes, PR creation and updates, CI follow-up, and integration are authorized delivery steps. Complete the required stages without asking again. Follow actual repository protection rules and preserve unrelated changes.
 - Conventional commit titles, plain language: `fix(web): new threads no longer spike CPU`.
-- Body: the problem in a sentence or two, then how you fixed it. End with the model and harness that did the work.
-- UI changes need before/after images. Motion or timing needs a short video.
+- Describe the problem, the change, and how you verified it.
+- Include screenshots or a short clip when they help verify a visual or timing change.
 - Upload PR evidence to GitHub. Never commit PR-only screenshots or assets such as `.github/pr-assets/`.
-- One concern per PR. If the description says "also", split it.
-- When babysitting: poll checks and comments newer than the last push, verify each bot finding against the source, fix real ones, dismiss false positives with a written reason. Stay quiet when nothing is new. Stop when the bots are green on the latest commit.
+- Keep related changes together and split independent work when useful.
+- When babysitting: poll checks and comments newer than the last push, verify each bot finding against the source, fix real ones, dismiss false positives with a written reason. Stay quiet when nothing is new. For a checks-only assignment, finish when the requested checks pass. For an integration assignment, complete the merge and verify the accepted result.
 
 ## Documentation
 
@@ -137,7 +137,7 @@ Most code changes do not need an internal documentation change. Agents can read 
 ## Plans and work artifacts
 
 - Do not commit implementation plans, research notes, or agent scratch files. Keep temporary working material outside the worktree. `.plans/` is gitignored only as a safety net for legacy tooling.
-- Track active maintainer work in the GitHub issue or project item that owns it. External proposals follow `CONTRIBUTING.md` and belong in Ideas discussions.
+- Update an existing tracking item when the task uses one. Assigned work in this fork can proceed directly. See `CONTRIBUTING.md` for external proposals.
 - A merged PR is the implementation record. Close or update its tracking item when the work lands; do not preserve a second checklist in the repository.
 
 ## How it works
