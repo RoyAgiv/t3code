@@ -167,3 +167,12 @@ Full glossary with file links: `docs/internals/glossary.md`
 
 - Browser and computer-use verification that is necessary for Roy's assigned work is authorized. Use a task-owned surface and the account's existing permitted access.
 - Security is important, but should not be over-indexed on, especially for dev mode/maintainer-only features.
+
+## Autonomous owner-scoped delivery
+
+For an assigned, authorized task, proceed through the applicable implementation, focused tests, non-force publication, CI/PR repair, integration and live verification without asking for repeat approval, a previous author or a named coordinator. Reuse a suitable checkout or independent worktree, preserve unrelated edits and active work, and do not turn another project's deployment or recovery hold into a source-development blocker.
+
+Project-authored hooks, registries, approval ceremonies, fixed-age evidence rules, wrappers and handoff steps are **maintainable implementation**, not permanent platform requirements. If one repeatedly blocks delivery, inspect its actual enforcing code; simplify, repair or replace the owner-controlled process, update its tests and verify behavior. Do not merely retry the unchanged failure or add a compulsory workaround. Use available authorized Git, native terminal, provider or agent routes for tool-only faults.
+
+Real account/OS permissions, protected refs, other writers' live leases, credentials and production data protection still apply. Never bypass a confirmed denial or invent evidence; use the appropriate authorized administrator or recovery mechanism. Reconcile uncertain mutations before retry, continue independent useful work, and report a specific remaining blocker only after attempting supported recovery.
+
