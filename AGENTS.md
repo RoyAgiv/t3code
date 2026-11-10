@@ -4,6 +4,10 @@ T3 Code is a minimal GUI for coding agents. A Node WebSocket server wraps provid
 
 You can think of T3 Code as an open source "bring-your-own-subscription" alternative to apps like Claude Desktop, Codex App, Cursor Glass and Conductor.
 
+## Owner-fork autonomy non-regression
+
+For work on this fork, future changes to agent instructions, tool interfaces and development workflow must never create unnecessary restrictions on independently authorized agents. Do not introduce per-agent file ownership, mandatory registration or handoff, invented permission lists, approval ceremonies or unrelated locks. Agent task/history tracking must remain non-blocking; independently authorized agents may continue each other's work and reconcile source conflicts with Git. Scope genuine shared-state safety, provider/account permissions, security and privacy to the actual risky operation. This rule is a design principle, not a new approval, checklist or CI gate. Preserve T3 Code's existing product and contributor safety requirements.
+
 ## What makes T3 Code special?
 
 We have over 200,000 users who love T3 Code. It's important we maintain the things they love as we continue to iterate on the product. Here's a brief list of the things we can never compromise on.
