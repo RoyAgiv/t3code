@@ -1,44 +1,10 @@
 ---
 name: test-t3-app
-description: Test T3 Code's web and desktop UI through its built-in Browser panel against isolated development state. Use for browser verification, browser pairing recovery, and test fixtures. Use test-t3-mobile for native mobile verification.
+description: Test T3 web UI in an isolated dev environment using the T3 preview panel or an authorized browser.
 ---
 
-# Test T3 web and desktop
-
-Prefer T3's built-in Browser panel for verification. If its tools are absent or
-the panel is unavailable, use an independently authorized suitable browser or
-computer-use route against the same isolated development target. Do not route
-around an actual account or tool permission denial. If no permitted route can
-verify the change, report the remaining verification blocker and continue
-independent work; never claim an unverified result passed. For native mobile
-testing, use [test-t3-mobile](../test-t3-mobile/SKILL.md).
-
-## Start the app
-
-Reuse this task's healthy dev server. Otherwise run `vp run dev` from the
-repository root and retain its terminal session. Use the worktree's ignored
-`.t3` state and read the actual ports and pairing URL from the dev-runner output.
-Never run against `~/.t3/userdata` or set `VITE_HTTP_URL` or `VITE_WS_URL`.
-
-Test with meaningful project and thread data. Read
-[references/sqlite-fixtures.md](references/sqlite-fixtures.md) only when
-inspecting or seeding SQLite. Stop the test server before direct fixture writes.
-
-## Use the Browser panel
-
-Call `preview_status`, then `preview_open` if the Browser panel is
-closed. Navigate to the complete startup pairing URL once with
-`preview_navigate`, then use `preview_snapshot` and T3's interaction tools.
-If the token was consumed or expired, run `node apps/server/src/bin.ts pair`
-for a fresh one. Keep using the same tab.
-
-## Verify and retain
-
-Exercise the affected flow and capture the state that proves it works. Keep
-the server, state, and panel available while the user inspects or iterates.
-An assistant turn ending is not teardown. Stop only processes you started,
-using retained terminal sessions or captured PIDs.
-
-When sharing is requested, start with `vp run dev --share` and give the user
-a fresh complete pairing URL that you have not consumed. Keep other credentials
-out of screenshots, commits, and replies.
+- Prefer the T3 preview panel; use an independently authorized browser if unavailable. Never bypass a permission denial.
+- Reuse a healthy isolated dev server or run `vp run dev`. Use the worktree's ignored `.t3`; never use live `~/.t3/userdata` or set `VITE_HTTP_URL`/`VITE_WS_URL`. Read actual ports and pairing URL from startup.
+- For SQLite fixtures, follow [references/sqlite-fixtures.md](references/sqlite-fixtures.md); stop the server before writes.
+- Call `preview_status`, then `preview_open` if needed. Navigate once with `preview_navigate`; inspect with `preview_snapshot` and interact using the same tab. Generate a fresh token with `node apps/server/src/bin.ts pair` if consumed.
+- Verify actual UI behavior; retain the healthy server and tab. Stop only your own processes. For sharing, run `vp run dev --share` and give the user the fresh, unconsumed full URL.
