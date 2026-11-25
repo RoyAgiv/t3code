@@ -2040,7 +2040,7 @@ describe("resolveThreadStatusPill", () => {
     ).toBeNull();
   });
 
-  it("shows completed when there is an unseen completion and no active blocker", () => {
+  it("shows an unread reply without claiming task success", () => {
     expect(
       resolveThreadStatusPill({
         thread: {
@@ -2055,7 +2055,7 @@ describe("resolveThreadStatusPill", () => {
           },
         },
       }),
-    ).toMatchObject({ label: "Completed", pulse: false });
+    ).toMatchObject({ label: "Reply ready", pulse: false });
   });
 });
 
@@ -2090,7 +2090,7 @@ describe("resolveProjectStatusIndicator", () => {
     expect(
       resolveProjectStatusIndicator([
         {
-          label: "Completed",
+          label: "Reply ready",
           colorClass: "text-emerald-600",
           dotClass: "bg-emerald-500",
           pulse: false,
@@ -2111,11 +2111,11 @@ describe("resolveProjectStatusIndicator", () => {
     ).toMatchObject({ label: "Pending Approval", dotClass: "bg-amber-500" });
   });
 
-  it("prefers plan-ready over completed when no stronger action is needed", () => {
+  it("prefers plan-ready over an unread reply when no stronger action is needed", () => {
     expect(
       resolveProjectStatusIndicator([
         {
-          label: "Completed",
+          label: "Reply ready",
           colorClass: "text-emerald-600",
           dotClass: "bg-emerald-500",
           pulse: false,
