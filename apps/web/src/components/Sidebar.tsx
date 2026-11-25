@@ -53,6 +53,7 @@ import {
   EyeIcon,
   FolderIcon,
   GitBranchIcon,
+  MessageCircleIcon,
   MessageCircleQuestionIcon,
   PinIcon,
   PinOffIcon,
@@ -1178,9 +1179,9 @@ const SidebarThreadRow = memo(function SidebarThreadRow(props: {
                   }
                 : isUnread
                   ? {
-                      label: "Done",
-                      icon: "done" as const,
-                      className: "text-emerald-700 dark:text-emerald-300",
+                      label: "Reply",
+                      icon: "reply" as const,
+                      className: "text-muted-foreground",
                     }
                   : null;
   const isWokeStatus = topStatus?.icon === "woke";
@@ -1835,8 +1836,8 @@ const SidebarThreadRow = memo(function SidebarThreadRow(props: {
                             <CircleAlertIcon aria-hidden className="size-4 shrink-0" />
                           ) : topStatus.icon === "monitoring" ? (
                             <EyeIcon aria-hidden className="size-4 shrink-0" />
-                          ) : topStatus.icon === "done" ? (
-                            <CircleCheckIcon aria-hidden className="size-4 shrink-0" />
+                          ) : topStatus.icon === "reply" ? (
+                            <MessageCircleIcon aria-hidden className="size-4 shrink-0" />
                           ) : null}
                           {/* The label alone is the live region: a role="status"
                             wrapper around the ticking duration would make
