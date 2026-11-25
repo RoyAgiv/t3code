@@ -1,5 +1,7 @@
 # T3 Code
 
+For owner-scoped engineering, apply the [canonical HYDE fleet policy and core engineering principles](https://github.com/RoyAgiv/HYDE-OS/blob/main/docs/agents/HYDE_FLEET_AGENT_POLICY.md), synchronized locally in `~/AGENTS.md`. Use these as decision-making principles, not new approval or process gates. Preserve genuine access boundaries and the project-specific requirements below.
+
 T3 Code is a minimal GUI for coding agents. A Node WebSocket server wraps provider CLIs and agents (Codex, Claude Code, Cursor, Grok, OpenCode, Antigravity) and serves web, desktop, and mobile clients.
 
 You can think of T3 Code as an open source "bring-your-own-subscription" alternative to apps like Claude Desktop, Codex App, Cursor Glass and Conductor.
